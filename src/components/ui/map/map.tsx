@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
 import React from "react";
+
 import {
   MapContainer,
   TileLayer,
@@ -12,6 +13,7 @@ import {
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
+
 
 const Leaflet = () => {
   return (
