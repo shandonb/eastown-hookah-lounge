@@ -18,7 +18,7 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 const Leaflet = () => {
   return (
     <MapContainer
-      style={{ height: "50%", width: "50%" }}
+      style={{ height: "100%", width: "90%" }}
       center={[42.95539, -85.63196]}
       zoom={13}
       scrollWheelZoom={true}

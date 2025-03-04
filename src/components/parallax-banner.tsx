@@ -41,18 +41,31 @@ export default function ContentParallax({
         alignContent="center" 
         alignItems="center" 
         flexWrap={"wrap"} 
-        width="33%" 
-        bgColor={"rgba(0,0,15,0.5)"} 
+        width={{
+          base: "100%",
+          md: "50%",
+          lg: "33%"
+        }}
+        bgColor={"rgba(0,0,15,0.5)"}
         zIndex={"2"} 
-        mx="12" 
-        my="36" 
+        mx={{
+          base: 0,
+          "2xl": 12
+        }}
+        my={{
+          base: 0,
+          "2xl": 6
+        }}
+        px={{
+          base: 5,
+          lg: 10
+        }}
         backdropFilter={"blur(10px)"}
       >
         <Heading 
           zIndex="2" 
           flexBasis={"100%"} 
-          textAlign={textAlign} 
-          mx="12"
+          textAlign={textAlign}
         >
           {headline}
         </Heading>
@@ -61,7 +74,6 @@ export default function ContentParallax({
           zIndex={"2"} 
           flexBasis={"100%"} 
           textAlign={textAlign} 
-          mx="12"
         >
           {copy}
         </Text>

@@ -12,7 +12,7 @@ export function Navbar() {
     <Flex 
       justify="center" 
       className={faculty.className} 
-      fontSize={{ base: "xl" }} 
+      fontSize={["xs", undefined, undefined, "xl"]} 
       py="5"
       position="fixed"
       top="0"
@@ -22,7 +22,7 @@ export function Navbar() {
       backdropFilter="blur(8px)"
       zIndex="100"
     >
-      <Flex as="nav" justify="space-around" width="50%">
+      <Flex as="nav" justify="space-evenly" width="100%">
         {navigation.map(({ label, href }) => (
           <ChakraLink key={href} as={Link} href={href}>
             {label.toUpperCase()}

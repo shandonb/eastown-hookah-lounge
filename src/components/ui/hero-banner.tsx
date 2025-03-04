@@ -26,7 +26,8 @@ export default function HeroBanner() {
       />
       <Flex
         p="12"
-        width="50%"
+        //width="50%"
+        width={["100%", undefined, "50%", "50%"]}
         height="100%"
         bg="linear-gradient(90deg, rgba(0,0,5,1.0) 0%, rgba(0,0,5,0.7) 80%, rgba(0,0,5,0.0) 100%)"
         alignItems="center"
@@ -39,14 +40,15 @@ export default function HeroBanner() {
         <Image 
           src="ehl-logo.svg" 
           alt="Eastown Hookah Lounge"
-          width="40%"
+          maxHeight="80%"
           mb="6"
         />
         <Heading 
           flexBasis="100%" 
           textAlign="center" 
           textTransform={"uppercase"}
-          size="3xl"
+          //size="3xl"
+          fontSize={["xs", "sm", "md", "xl"]}
         > 
           Grand Rapids&apos; premiere hookah experience 
         </Heading>
@@ -54,7 +56,7 @@ export default function HeroBanner() {
           flexBasis={"100%"}
           textAlign={"center"}
           textTransform={"uppercase"}
-          size={"lg"}
+          size={["xs", "xs", "sm", "md"]}
         >
           Since 2005
         </Heading>
