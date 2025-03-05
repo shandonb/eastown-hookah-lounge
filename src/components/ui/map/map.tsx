@@ -15,7 +15,7 @@ import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
 
 
-const Leaflet = () => {
+const Leaflet: React.FC = () => {
   return (
     <MapContainer
       style={{ height: "100%", width: "90%" }}

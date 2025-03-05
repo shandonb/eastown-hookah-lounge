@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Heading, Image } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image } from "@chakra-ui/react"
 
 export default function HeroBanner() {
   return (

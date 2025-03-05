@@ -2,18 +2,21 @@
 
 import { Grid, Heading } from "@chakra-ui/react";
 
-interface HeadlineBlockProps {
+export interface HeadlineBlockProps {
+  /** Headline text */
   heading: string;
+  /** Body copy (optional) */
   copy?: string;
-  height?: number;
+  /** Section height (optional) */
+  height?: string;
 }
 
-export default function HeadlineBlock({heading, copy, height=30}: HeadlineBlockProps) {
+export default function HeadlineBlock({heading, copy, height="30vh"}: HeadlineBlockProps) {
   return (
     <Grid 
       placeItems="center" 
       placeContent="center" 
-      height={`${height}vh`} 
+      height={height} 
       gap="6"
     >
       <Heading 
