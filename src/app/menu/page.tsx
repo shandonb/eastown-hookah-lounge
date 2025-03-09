@@ -13,6 +13,7 @@ interface Flavor {
 
 interface FlavorCategory {
   category: string;
+  disclaimer?: string;
   flavors: Flavor[];
 }
 
@@ -91,6 +92,14 @@ export default function MenuPage() {
       >
         {flavors.map((group, groupIndex) => (
           <MenuList key={groupIndex} title={group.category}>
+            {(group.disclaimer) && (
+              <Heading
+                size={"xs"}
+                textDecoration={"underline"}
+              >
+                {group.disclaimer}
+              </Heading>
+            )}
             {group.flavors.map((flavor, flavorIndex) => (
               <FlavorItem key={flavorIndex} name={flavor.name} description={flavor.description ? flavor.description : undefined} />
             ))}

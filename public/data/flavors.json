@@ -1,6 +1,7 @@
 [
   {
     "category": "Starbuzz",
+    "disclaimer": "(+$4.30 Single | +$4.31 Double)",
     "flavors":[
       {
         "name": "Blue Mist"
@@ -13,6 +14,195 @@
       },
       {
         "name": "Fuzzy Navel"
+      },
+      {
+        "name": "Gummy Bears"
+      },
+      {
+        "name": "Irish Peach"
+      },
+      {
+        "name": "Mighty Freeze"
+      },
+      {
+        "name": "Obamagranate"
+      },
+      {
+        "name": "Purple Haze"
+      },
+      {
+        "name": "Queen of Sex"
+      },
+      {
+        "name": "Safari Melon Dew"
+      },
+      {
+        "name": "Simply Mint"
+      },
+      {
+        "name": "Skittles"
+      },
+      {
+        "name": "Sweetarts"
+      },
+      {
+        "name": "Tropicool"
+      },
+      {
+        "name": "Watermelon Freeze"
+      },
+      {
+        "name": "White Mint"
+      }
+    ]
+  },
+  {
+    "category": "Single Flavors",
+    "flavors": [
+      {
+        "name": "Blueberry"
+      },
+      {
+        "name": "Cherry"
+      },
+      {
+        "name": "Cinnamon"
+      },
+      {
+        "name": "Coconut"
+      },
+      {
+        "name": "Double Apple"
+      },
+      {
+        "name": "Grape"
+      },
+      {
+        "name": "Grapefruit"
+      },
+      {
+        "name": "Guava"
+      },
+      {
+        "name": "Lemon"
+      },
+      {
+        "name": "Mango"
+      },
+      {
+        "name": "Mint"
+      },
+      {
+        "name": "Orange"
+      },
+      {
+        "name": "Peach"
+      },
+      {
+        "name": "Pineapple"
+      },
+      {
+        "name": "Raspberry"
+      },
+      {
+        "name": "Rose"
+      },
+      {
+        "name": "Strawberry"
+      },
+      {
+        "name": "Vanilla"
+      },
+      {
+        "name": "Watermelon"
+      }
+    ]
+  },
+  {
+    "category": "House Mixes",
+    "flavors": [
+      {
+        "name": "Fruit Rollup"
+      },
+      {
+        "name": "Garden of Babylon"
+      },
+      {
+        "name": "Gum Mint"
+      },
+      {
+        "name": "Lemon Mint"
+      },
+      {
+        "name": "Orange Cream"
+      },
+      {
+        "name": "Orange Mint"
+      },
+      {
+        "name": "Paris Hilton"
+      },
+      {
+        "name": "Peaches 'N' Cream"
+      },
+      {
+        "name": "Strawberries 'N' Cream"
+      }
+    ]
+  },
+  {
+    "category": "Mocktails",
+    "flavors": [
+      {
+        "name": "Pineapple Upside-Down Cake"
+      },
+      {
+        "name": "Sex on the Beach"
+      },
+      {
+        "name": "Strawberry Mojito"
+      },
+      {
+        "name": "Vanilla Mint Mojito"
+      }
+    ]
+  },
+  {
+    "category": "Fumari",
+    "disclaimer": "(+$4.30 Single | +$4.31 Double)",
+    "flavors": [
+      {
+        "name": "Blueberry Muffin"
+      },
+      {
+        "name": "Spiced Chai"
+      },
+      {
+        "name": "Red Gummy Bear"
+      },
+      {
+        "name": "White Gummy Bear"
+      }
+    ]
+  },
+  {
+    "category": "Hometown Flavors",
+    "flavors": [
+      {
+        "name": "Batter Up Tigers",
+        "description": "Blueberry Orange"
+      },
+      {
+        "name": "Detroit Basketball",
+        "description": "Blueberry Cherry Vanilla"
+      },
+      {
+        "name": "Red Wings Slapshot",
+        "description": "Raspberry Mint"
+      },
+      {
+        "name": "Roaring Lions",
+        "description": "Blueberry Vanilla"
       }
     ]
   },
@@ -26,6 +216,14 @@
       {
         "name": "Captain America",
         "description": "Mango Peach Coconut"
+      },
+      {
+        "name": "Doctor Strange",
+        "description": "Guess the Flavor"
+      },
+      {
+        "name": "Iron Man",
+        "description": "Mango Cherry Raspberry"
       }
     ]
   }
