@@ -16,34 +16,46 @@ export function MenuGroup ({ title, children, cols}: MenuGroupProps) {
     <Flex
       wrap="wrap"
       width="100%"
+      justify="center"
     >
       <Separator
         size={"lg"}
         width="100%"
         my="2"
       />
-      <Heading
-        width="100%"
-        my="2"
-      >
-        { title }
-      </Heading>
-      {React.Children.map(children, (child, index) => (
-        <Flex 
-          key={index}
-          wrap={"wrap"}
-          width={typeof cols === "number" ? `1/${cols}` : {
-            base: cols.base ? `1/${cols.base}` : undefined,
-            sm: cols.sm ? `1/${cols.sm}` : undefined,
-            md: cols.md ? `1/${cols.md}` : undefined,
-            lg: cols.lg ? `1/${cols.lg}` : undefined,
-            xl: cols.xl ? `1/${cols.xl}` : undefined,
-            "2xl": cols["2xl"] ? `1/${cols["2xl"]}` : undefined,
+      <Flex width="100%" justify="center">
+        <Heading
+          my="2"
+          size={{
+            base: "2xl",
+            md: "4xl",
+            "2xl": "5xl",
           }}
         >
-          {child}
-        </Flex>
-      ))}
+          { title }
+        </Heading>
+      </Flex>
+      <Flex
+        wrap="wrap"
+        justify={"center"}
+      >
+        {React.Children.map(children, (child, index) => (
+          <Flex 
+            key={index}
+            wrap={"wrap"}
+            width={typeof cols === "number" ? `1/${cols}` : {
+              base: cols.base ? `1/${cols.base}` : undefined,
+              sm: cols.sm ? `1/${cols.sm}` : undefined,
+              md: cols.md ? `1/${cols.md}` : undefined,
+              lg: cols.lg ? `1/${cols.lg}` : undefined,
+              xl: cols.xl ? `1/${cols.xl}` : undefined,
+              "2xl": cols["2xl"] ? `1/${cols["2xl"]}` : undefined,
+            }}
+          >
+            {child}
+          </Flex>
+        ))}
+      </Flex>
     </Flex>
   )
 }

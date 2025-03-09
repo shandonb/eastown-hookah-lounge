@@ -13,11 +13,32 @@ export function MenuList ({ title, children }: MenuListProps) {
     <Flex
       wrap="wrap"
       width="100%"
+      borderWidth={{
+        base: "0px",
+        md: "3px",
+        lg: "0px"
+      }}
+      padding={{
+        base: 4,
+        md: 6,
+        lg: 5
+      }}
+      alignItems="center"
+      alignContent={"center"}
     >
-      <Heading width="100%"> { title }</Heading>
-      <List.Root>
+      <Heading 
+        width="100%"
+        textDecoration={"underline"}
+      >
+        { title }
+      </Heading>
+      <List.Root
+        variant="plain"
+      >
         {React.Children.map(children, (child, index) => (
-          <List.Item key={index}>
+          <List.Item 
+            key={index}
+          >
             {child}
           </List.Item>
         ))}
