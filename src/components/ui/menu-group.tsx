@@ -14,11 +14,29 @@ export interface MenuGroupProps {
 }
 
 export function MenuGroup ({ title, children, cols, subtitle}: MenuGroupProps) {
+  let col: number;
+  let reactiveCol: object;
+  if (typeof cols === "number") {
+    col = 100/cols
+  } else {
+    reactiveCol = {
+      base: cols.base ? `${100/cols.base}%` : undefined,
+      sm: cols.sm ? `${100/cols.sm}%` : undefined,
+      md: cols.md ? `${100/cols.md}%` : undefined,
+      lg: cols.lg ? `${100/cols.lg}%` : undefined,
+      xl: cols.xl ? `${100/cols.xl}%` : undefined,
+      "2xl": cols["2xl"] ? `${100/cols["2xl"]}%` : undefined
+    } 
+  }
   return (
     <Flex
       wrap="wrap"
       width="100%"
       justify="center"
+      px={{
+        base: 4,
+        md: 0
+      }}
     >
       <Separator
         size={"lg"}
@@ -46,23 +64,17 @@ export function MenuGroup ({ title, children, cols, subtitle}: MenuGroupProps) {
             { subtitle }
           </Heading>
         </Flex>
-        )}
+      )}
       <Flex
         wrap="wrap"
         justify={"center"}
+        alignItems="Center"
       >
         {React.Children.map(children, (child, index) => (
           <Flex 
             key={index}
             wrap={"wrap"}
-            width={typeof cols === "number" ? `1/${cols}` : {
-              base: cols.base ? `1/${cols.base}` : undefined,
-              sm: cols.sm ? `1/${cols.sm}` : undefined,
-              md: cols.md ? `1/${cols.md}` : undefined,
-              lg: cols.lg ? `1/${cols.lg}` : undefined,
-              xl: cols.xl ? `1/${cols.xl}` : undefined,
-              "2xl": cols["2xl"] ? `1/${cols["2xl"]}` : undefined,
-            }}
+            width={typeof cols === "number" ? `${col}%` : reactiveCol }
           >
             {child}
           </Flex>

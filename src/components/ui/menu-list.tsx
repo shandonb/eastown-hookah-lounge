@@ -12,18 +12,15 @@ export function MenuList ({ title, children }: MenuListProps) {
   return(
     <Flex
       wrap="wrap"
-      width="100%"
       borderWidth={{
         base: "0px",
         md: "3px",
         lg: "0px"
       }}
       padding={{
-        base: 4,
-        md: 6,
+        base: 3,
         lg: 5
       }}
-      alignItems="center"
       alignContent={"center"}
     >
       <Heading 
@@ -34,6 +31,7 @@ export function MenuList ({ title, children }: MenuListProps) {
       </Heading>
       <List.Root
         variant="plain"
+        width="100%"
       >
         {React.Children.map(children, (child, index) => (
           <List.Item 
