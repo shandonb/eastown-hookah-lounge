@@ -1,0 +1,32 @@
+[
+  {
+    "category": "Starbuzz",
+    "flavors":[
+      {
+        "name": "Blue Mist"
+      },
+      {
+        "name": "Code 69"
+      },
+      {
+        "name": "Creamsicle"
+      },
+      {
+        "name": "Fuzzy Navel"
+      }
+    ]
+  },
+  {
+    "category": "Hero Mixes",
+    "flavors": [
+      {
+        "name": "Black Panther",
+        "description": "Raspberry Grape"
+      },
+      {
+        "name": "Captain America",
+        "description": "Mango Peach Coconut"
+      }
+    ]
+  }
+]
