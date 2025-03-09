@@ -1,8 +1,27 @@
+"use client";
+
 import { MenuGroup } from "@/components/ui/menu-group"
 import { MenuList } from "@/components/ui/menu-list"
-import { Flex, Heading, Text } from "@chakra-ui/react"
+import { Heading, Text } from "@chakra-ui/react"
+import { useEffect, useState } from "react"
+
+interface Flavor {
+  name: string;
+  description?: string;
+}
+
+interface FlavorCategory {
+  category: string;
+  flavors: Flavor[];
+}
 
 export default function MenuPage() {
+  const [flavors, setFlavors] = useState<FlavorCategory[]>([]);
+  useEffect(() => {
+    fetch("/data/flavors.json")
+    .then((res) => res.json())
+    .then((data) => setFlavors(data));
+  }, []);
   return(
     // Note: A db or object for the menu would make this section easier and cleaner
     <main>
@@ -69,140 +88,18 @@ export default function MenuPage() {
           lg: 3
         }}
       >
-        <MenuList title="Starbuzz">
-          <Heading 
-            size={"sm"}
-            textDecoration={"underline"}
-          >
-            (+$4.30 Single | +$4.31 Double)
-          </Heading>
-          <Text>Blue Mist</Text>
-          <Text>Code 69</Text>
-          <Text>Creamsicle</Text>
-          <Text>Fuzzy Navel</Text>
-          <Text>Gummy Bears</Text>
-          <Text>Irish Peach</Text>
-          <Text>Mighty Freeze</Text>
-          <Text>Obamagranate</Text>
-          <Text>Purple Haze</Text>
-          <Text>Queen of Sex</Text>
-          <Text>Safari Melon Dew</Text>
-          <Text>Simply Mint</Text>
-          <Text>Skittles</Text>
-          <Text>Sweetarts</Text>
-          <Text>Tropicool</Text>
-          <Text>Watermelon Freeze</Text>
-          <Text>White Mint</Text>
-        </MenuList>
-
-        <MenuList title="Single Flavors">
-          <Text>Blueberry</Text>
-          <Text>Cherry</Text>
-          <Text>Cinnamon</Text>
-          <Text>Coconut</Text>
-          <Text>Coconut</Text>
-          <Text>Double Apple</Text>
-          <Text>Grape</Text>
-          <Text>Grapefruit</Text>
-          <Text>Guava</Text>
-          <Text>Lemon</Text>
-          <Text>Mango</Text>
-          <Text>Mint</Text>
-          <Text>Orange</Text>
-          <Text>Peach</Text>
-          <Text>Pineapple</Text>
-          <Text>Raspberry</Text>
-          <Text>Rose</Text>
-          <Text>Strawberry</Text>
-          <Text>Vanilla</Text>
-          <Text>Watermelon</Text>
-        </MenuList>
-
-        <MenuList title="House Mixes">
-          <Text>Fruit Rollup</Text>
-          <Text>Garden of Babylon</Text>
-          <Text>Gum Mint</Text>
-          <Text>Lemon Mint</Text>
-          <Text>Orange Cream</Text>
-          <Text>Orange Mint</Text>
-          <Text>Paris Hilton</Text>
-          <Text>Peaches &apos;N&apos; Cream</Text>
-          <Text>Strawberries &apos;N&apos; Cream</Text>
-        </MenuList>
-
-        <MenuList title="Mocktails">
-          <Text>Pineapple Upside-Down Cake</Text>
-          <Text>Sex on the Beach</Text>
-          <Text>Strawberry Mojito</Text>
-          <Text>Vanilla Mint Mojito</Text>
-        </MenuList>
-
-        <MenuList title="Fumari">
-          <Heading
-            size={"sm"}
-            textDecoration={"underline"}
-          >
-            (+$4.30 Single | +$4.31 Double)
-          </Heading>
-          <Text>Blueberry Muffin</Text>
-          <Text>Spiced Chai</Text>
-          <Text>Red Gummy Bear</Text>
-          <Text>White Gummy Bear</Text>
-        </MenuList>
-
-        <MenuList title="Hometown Flavors">
-          <Flex
-            wrap="wrap"
-          >
-            <Text width="100%">Batter Up Tigers</Text>
-            <Text width="100%" fontSize="xs" mb={2}>(Blueberry Orange)</Text>
-          </Flex>
-          <Flex
-            wrap="wrap"
-          >
-            <Text width="100%">Detroit Basketball</Text>
-            <Text width="100%" fontSize="xs" mb={2}>(Blueberry Cherry Vanilla)</Text>
-          </Flex>
-          <Flex
-            wrap="wrap"
-          >
-            <Text width="100%">Red Wings Slapshot</Text>
-            <Text width="100%" fontSize="xs" mb={2}>(Raspberry Mint)</Text>
-          </Flex>
-          <Flex
-            wrap="wrap"
-          >
-            <Text width="100%">Roaring Lions</Text>
-            <Text width="100%" fontSize="xs" mb={2}>(Blueberry Vanilla)</Text>
-          </Flex>
-        </MenuList>
-
-        <MenuList title="Hero Mixes">
-          <Flex
-            wrap="wrap"
-          >
-            <Text width="100%">Black Panther</Text>
-            <Text width="100%" fontSize="xs" mb={2}>(Raspberry Grape)</Text>
-          </Flex>
-          <Flex
-            wrap="wrap"
-          >
-            <Text width="100%">Captain America</Text>
-            <Text width="100%" fontSize="xs" mb={2}>(Mango Peach Coconut)</Text>
-          </Flex>
-          <Flex
-            wrap="wrap"
-          >
-            <Text width="100%">Doctor Strange</Text>
-            <Text width="100%" fontSize="xs" mb={2}>(Guess the Flavor)</Text>
-          </Flex>
-          <Flex
-            wrap="wrap"
-          >
-            <Text width="100%">Iron Man</Text>
-            <Text width="100%" fontSize="xs" mb={2}>(Mango Cherry Raspberry)</Text>
-          </Flex>
-        </MenuList>
+        {flavors.map((group, groupIndex) => (
+          <MenuList key={groupIndex} title={group.category}>
+            {group.flavors.map((flavor, flavorIndex) => (
+              <>
+                <Text key={"name-"+flavorIndex}>{flavor.name}</Text>
+                {(flavor.description) && (
+                  <Text key={"desc-"+flavorIndex} fontSize="sm">({flavor.description})</Text>
+                )}
+              </>
+            ))}
+          </MenuList>
+        ))}
       </MenuGroup>
 
       <MenuGroup
