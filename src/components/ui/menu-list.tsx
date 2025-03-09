@@ -5,7 +5,7 @@ import React from "react";
 
 export interface MenuListProps {
   title: string;
-  children: React.ReactNode
+  children?: React.ReactNode
 };
 
 export function MenuList ({ title, children }: MenuListProps) {
