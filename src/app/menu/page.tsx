@@ -233,6 +233,10 @@ export default function MenuPage() {
           <Text>+$5</Text>
         </MenuList>
       </MenuGroup>
+
+      <MenuGroup title="" cols={1}>
+        <Heading>There is also a selection of drinks and candy available at the bar!</Heading>
+      </MenuGroup>
     </main>
   )
 }
