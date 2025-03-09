@@ -12,7 +12,6 @@ export default function HeroBanner() {
       bgPos="center"
       bgRepeat="no-repeat"
       position="relative"
-      mt="16"
     >
       <Box
         position="absolute"
