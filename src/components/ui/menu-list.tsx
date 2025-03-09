@@ -12,15 +12,12 @@ export function MenuList ({ title, children }: MenuListProps) {
   return(
     <Flex
       wrap="wrap"
-      borderWidth={{
-        base: "0px",
-        md: "3px",
-        lg: "0px"
-      }}
+      width="100%"
       padding={{
         base: 3,
         lg: 5
       }}
+      gap={0}
       alignContent={"center"}
     >
       <Heading 

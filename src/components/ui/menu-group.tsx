@@ -69,6 +69,10 @@ export function MenuGroup ({ title, children, cols, subtitle}: MenuGroupProps) {
         wrap="wrap"
         justify={"center"}
         alignItems="Center"
+        width={{
+          base: "100%",
+          lg: "60%"
+        }}
       >
         {React.Children.map(children, (child, index) => (
           <Flex 

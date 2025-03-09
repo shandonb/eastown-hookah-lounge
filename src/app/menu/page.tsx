@@ -137,7 +137,12 @@ export default function MenuPage() {
       </MenuGroup>
 
       <MenuGroup title="" cols={1}>
-        <Heading>There is also a selection of drinks and candy available at the bar!</Heading>
+        <Heading 
+          width="100%" 
+          textAlign={"center"}
+        >
+          There is also a selection of drinks and candy available at the bar!
+        </Heading>
       </MenuGroup>
     </main>
   )
