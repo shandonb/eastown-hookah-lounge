@@ -14,7 +14,7 @@ export function Navbar() {
       className={faculty.className} 
       fontSize={["xs", undefined, undefined, "xl"]} 
       py="5"
-      position="fixed"
+      position="sticky"
       top="0"
       left="0"
       width="100%"
