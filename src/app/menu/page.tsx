@@ -1,5 +1,6 @@
 "use client";
 
+import { FlavorItem } from "@/components/ui/flavor-item";
 import { MenuGroup } from "@/components/ui/menu-group"
 import { MenuList } from "@/components/ui/menu-list"
 import { Heading, Text } from "@chakra-ui/react"
@@ -91,12 +92,7 @@ export default function MenuPage() {
         {flavors.map((group, groupIndex) => (
           <MenuList key={groupIndex} title={group.category}>
             {group.flavors.map((flavor, flavorIndex) => (
-              <>
-                <Text key={"name-"+flavorIndex}>{flavor.name}</Text>
-                {(flavor.description) && (
-                  <Text key={"desc-"+flavorIndex} fontSize="sm">({flavor.description})</Text>
-                )}
-              </>
+              <FlavorItem key={flavorIndex} name={flavor.name} description={flavor.description ? flavor.description : undefined} />
             ))}
           </MenuList>
         ))}
