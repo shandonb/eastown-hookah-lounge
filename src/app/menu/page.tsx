@@ -5,7 +5,7 @@ import { Text } from "@chakra-ui/react"
 export default function MenuPage() {
   return(
     <main>
-      <MenuGroup title="Step 1: Pick Your Hookah">
+      <MenuGroup title="Step 1: Pick Your Hookah" cols={3}>
         <MenuList title="Single Hose">
           <Text>$15.52</Text>
           <Text>Covers 1 or 2 people</Text>
@@ -22,7 +22,7 @@ export default function MenuPage() {
           <Text>Order a head change!</Text>
         </MenuList>
       </MenuGroup>
-      <MenuGroup title="Step 2: Pick Your Head">
+      <MenuGroup title="Step 2: Pick Your Head" cols={3}>
         <MenuList title="Pineapple Head">
           <Text>+$10</Text>
           <Text>+30 Min</Text>
