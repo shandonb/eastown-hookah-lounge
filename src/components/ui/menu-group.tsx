@@ -5,13 +5,15 @@ import React from "react";
 export interface MenuGroupProps {
   /** Title section for the group */
   title: string;
+  /** Subtitle section for the group */
+  subtitle?: string;
   /** Child objects (Expects MenuList) */
   children: React.ReactNode;
   /** Number of columns. Uses Chakra Fractional width */
   cols: number | {base?: number; sm?: number; md?: number; lg?: number; xl?: number; "2xl"?: number };
 }
 
-export function MenuGroup ({ title, children, cols}: MenuGroupProps) {
+export function MenuGroup ({ title, children, cols, subtitle}: MenuGroupProps) {
   return (
     <Flex
       wrap="wrap"
@@ -25,7 +27,7 @@ export function MenuGroup ({ title, children, cols}: MenuGroupProps) {
       />
       <Flex width="100%" justify="center">
         <Heading
-          my="2"
+          my={subtitle ? 0 : 2}
           size={{
             base: "2xl",
             md: "4xl",
@@ -35,6 +37,16 @@ export function MenuGroup ({ title, children, cols}: MenuGroupProps) {
           { title }
         </Heading>
       </Flex>
+      {(subtitle) && (
+        <Flex width="100%" justify="center">
+          <Heading
+            my="2"
+            size="sm"
+          >
+            { subtitle }
+          </Heading>
+        </Flex>
+        )}
       <Flex
         wrap="wrap"
         justify={"center"}

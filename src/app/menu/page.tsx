@@ -207,15 +207,13 @@ export default function MenuPage() {
 
       <MenuGroup
         title="Step 4: Pick Your Kicker(s)"
+        subtitle="(Kickers are optional additives to enhance your smoking experience)"
         cols={{
           base: 2,
           md: 4,
           lg: 6,
         }}
       >
-        <Heading size="sm">
-          (Kickers are optional additives to enhance your smoking experience)
-        </Heading>
         <MenuList title="Ice">
           <Text>+$1</Text>
         </MenuList>
