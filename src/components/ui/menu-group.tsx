@@ -1,5 +1,6 @@
 "use client";
 import { Heading, Separator, Flex } from "@chakra-ui/react";
+import React from "react";
 
 export interface MenuGroupProps {
   title: string;
@@ -15,6 +16,11 @@ export function MenuGroup ({ title, children}: MenuGroupProps) {
       <Heading>
         { title }
       </Heading>
+      {React.Children.map(children, (child, index) => (
+        <Flex key={index}>
+          {child}
+        </Flex>
+      ))}
     </Flex>
   )
 }
