@@ -5,7 +5,11 @@ import { Text } from "@chakra-ui/react"
 export default function MenuPage() {
   return(
     <main>
-      <MenuGroup title="Step 1: Pick Your Hookah" cols={3}>
+      <MenuGroup title="Step 1: Pick Your Hookah" cols={{
+        base: 1,
+        md: 2,
+        lg: 3
+      }}>
         <MenuList title="Single Hose">
           <Text>$15.52</Text>
           <Text>Covers 1 or 2 people</Text>
