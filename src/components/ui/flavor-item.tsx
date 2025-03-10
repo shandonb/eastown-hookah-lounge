@@ -3,7 +3,9 @@
 import { Flex, Text } from "@chakra-ui/react";
 
 export interface FlavorItemProps {
+  /** Flavor name */
   name: string;
+  /** Component flavors (optional) */
   description?: string;
 }
 

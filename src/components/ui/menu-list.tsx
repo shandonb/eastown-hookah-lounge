@@ -4,7 +4,9 @@ import { List, Heading, Flex } from "@chakra-ui/react";
 import React from "react";
 
 export interface MenuListProps {
+  /** Header for the list of items */
   title: string;
+  /** Child items */
   children?: React.ReactNode
 };
 

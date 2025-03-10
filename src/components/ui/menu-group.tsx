@@ -9,7 +9,7 @@ export interface MenuGroupProps {
   subtitle?: string;
   /** Child objects (Expects MenuList) */
   children: React.ReactNode;
-  /** Number of columns. Uses Chakra Fractional width */
+  /** Number of columns. Supports single values or Charka UI breakpoints */
   cols: number | {base?: number; sm?: number; md?: number; lg?: number; xl?: number; "2xl"?: number };
 }
 
