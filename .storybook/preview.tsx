@@ -25,7 +25,18 @@ const preview: Preview = {
         </Provider>
       )
     }
-  ]
+  ],
+  globalTypes: {
+    theme: {
+      name: "Theme",
+      description: "Global Chakra UI theme appearance",
+      defaultValue: "dark",
+      toolbar: {
+        icon: "circlehollow",
+        items: ['light', 'dark']
+      }
+    }
+  }
 };
 
 export default preview;
