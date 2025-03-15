@@ -1,5 +1,7 @@
 import ContentParallax from "@/components/parallax-banner"
-import { Center, Flex, Table } from "@chakra-ui/react"
+import Calendar from "@/components/ui/calendar/calendar"
+import CalendarItem from "@/components/ui/calendar/calendar-item"
+import { Center, Flex, Table, Text } from "@chakra-ui/react"
 
 export default function EventsPage() {
   return (
@@ -14,42 +16,11 @@ export default function EventsPage() {
       <Center
         mt={10}
       >
-        <Flex
-          width={{
-            base: "100%",
-            md: "80%",
-            lg: "50%"
-          }}
-          justify={"center"}
-        >
-          <Table.Root 
-            variant={"outline"}
-            size={"lg"}
-          >
-            <Table.Header>
-              <Table.Row>
-                <Table.ColumnHeader padding={"10"}>Sunday</Table.ColumnHeader>
-                <Table.ColumnHeader padding={"10"}>Monday</Table.ColumnHeader>
-                <Table.ColumnHeader padding={"10"}>Tuesday</Table.ColumnHeader>
-                <Table.ColumnHeader padding={"10"}>Wednesday</Table.ColumnHeader>
-                <Table.ColumnHeader padding={"10"}>Thursday</Table.ColumnHeader>
-                <Table.ColumnHeader padding={"10"}>Friday</Table.ColumnHeader>
-                <Table.ColumnHeader padding={"10"}>Saturday</Table.ColumnHeader>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              <Table.Row>
-                <Table.Cell padding={"10"}> - </Table.Cell>
-                <Table.Cell padding={"10"}>Karaoke</Table.Cell>
-                <Table.Cell padding={"10"}> - </Table.Cell>
-                <Table.Cell padding={"10"}>Smokin Spoken Word</Table.Cell>
-                <Table.Cell padding={"10"}>Live DJ</Table.Cell>
-                <Table.Cell padding={"10"}>Live DJ</Table.Cell>
-                <Table.Cell padding={"10"}>Live DJ</Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          </Table.Root>
-        </Flex>
+        <Calendar cols={7}>
+          <CalendarItem day="Sunday">
+            <Text>-</Text>
+          </CalendarItem>
+        </Calendar>
       </Center>
     </main>
   )
