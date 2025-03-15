@@ -1,9 +1,10 @@
 "use client";
 
+import { Footer } from "@/components/footer";
 import { FlavorItem } from "@/components/ui/flavor-item";
 import { MenuGroup } from "@/components/ui/menu-group"
 import { MenuList } from "@/components/ui/menu-list"
-import { Heading, Text } from "@chakra-ui/react"
+import { Box, Heading, Text } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 
 interface Flavor {
@@ -25,7 +26,7 @@ export default function MenuPage() {
     .then((data) => setFlavors(data));
   }, []);
   return(
-    // Note: A db or object for the menu would make this section easier and cleaner
+    // Note: A db would be cleaner for this eventually
     <main>
       <MenuGroup 
         title="Step 1: Pick Your Hookah"
@@ -144,6 +145,10 @@ export default function MenuPage() {
           There is also a selection of drinks and candy available at the bar!
         </Heading>
       </MenuGroup>
+      <MenuGroup title="" cols={1}>
+        <Box />
+      </MenuGroup>
+      <Footer />
     </main>
   )
 }
