@@ -8,7 +8,7 @@ export interface CalendarProps {
   cols: number | { base?: number, sm?: number, md?: number, lg?: number, xl?: number, "2xl"?: number };
   /** Calendar headline */
   title?: string;
-  /** Child object */
+  /** Child object. Expects CalendarItem objects */
   children: React.ReactNode;
 }
 

@@ -1,7 +1,8 @@
+import { Footer } from "@/components/footer"
 import ContentParallax from "@/components/parallax-banner"
 import Calendar from "@/components/ui/calendar/calendar"
 import CalendarItem from "@/components/ui/calendar/calendar-item"
-import { Center } from "@chakra-ui/react"
+import { Center, Em, Flex, Heading, List } from "@chakra-ui/react"
 
 export default function EventsPage() {
   return (
@@ -37,6 +38,29 @@ export default function EventsPage() {
         flexJust="end"
         textAlign="right"
       />
+      <Flex
+        width="100%"
+        justify={"center"}
+        my={10}
+        pb={10}
+        borderBottom={"sm"}
+      >
+        <Flex 
+          width={{
+            base: "100%",
+            lg: "60%"
+          }}
+          wrap="wrap"
+        >
+          <Heading width="100%">Upcoming Events</Heading>
+          <List.Root>
+            <List.Item><Em>October 29th</Em> - Hallowween Party | Costume Contest | Over $500 in prizes!</List.Item>
+            <List.Item><Em>November 19th</Em> - After Hours Dance Party: Hosted by Layer Cake</List.Item>
+            <List.Item><Em>November 23rd</Em> - Biggest Hookah Night of the Year! | Extended Hours, Hookah Specials</List.Item>
+          </List.Root>
+        </Flex>
+      </Flex>
+      <Footer />
     </main>
   )
 }
