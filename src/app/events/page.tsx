@@ -13,9 +13,7 @@ export default function EventsPage() {
         flexJust="start"
         textAlign="left"
       />
-      <Center
-        mt={10}
-      >
+      <Center>
         <Calendar 
           cols={{
             base: 2,
@@ -32,6 +30,13 @@ export default function EventsPage() {
           <CalendarItem day="Saturday">Live DJ</CalendarItem>
         </Calendar>
       </Center>
+      <ContentParallax
+        img="/img/parallax-04.webp"
+        headline="Special Occasions"
+        copy="From surprise musical guests to Superbowl Sunday, there's always something interesting going down at Eastown Hookah Lounge!"
+        flexJust="end"
+        textAlign="right"
+      />
     </main>
   )
 }

@@ -28,7 +28,7 @@ export default function Calendar({cols, children, title}: CalendarProps){
     }
   }
   return(
-    <Flex width="100%" wrap={"wrap"} justify={"center"}>
+    <Flex width="100%" wrap={"wrap"} justify={"center"} my={10}>
       {(title) && (
         <Flex width="100%" justify="Center" mb="6">
           <Heading>{ title }</Heading>
