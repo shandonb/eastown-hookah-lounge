@@ -6,20 +6,37 @@ import CalendarItem from '@/components/ui/calendar/calendar-item';
 
 const CalendarItemStory: Meta<typeof CalendarItem> = {
   title: 'Components/CalendarItem',
-  component: CalendarItem
+  component: CalendarItem,
+  argTypes: {
+    contents: {
+      control: {
+        type: 'text'
+      },
+      defaultValue: 'Some text'
+    }
+  }
 } as Meta<typeof CalendarItem>;
+
+interface CalendarItemStoryProps extends CalendarItemProps {
+  contents: string;
+}
 
 export default CalendarItemStory;
 
-const Template: StoryFn<CalendarItemProps> = (args) => (
+const Template: StoryFn<CalendarItemStoryProps> = (args) => {
+  const { contents, ...props } = args;
+  return(
   <Provider>
     <Theme appearance="dark">
-      <CalendarItem {...args}></CalendarItem>
+      <CalendarItem {...props}>
+        { contents }
+      </CalendarItem>
     </Theme>
   </Provider>
-)
+)}
 
 export const Default = Template.bind({});
 Default.args = {
-  day: "Monday"
+  day: "Monday",
+  contents: 'Some Text'
 }

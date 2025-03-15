@@ -19,7 +19,7 @@ export default function Calendar({cols, children, title}: CalendarProps){
     columns = `${100 / cols}%`;
   } else {
     bPointColumns = {
-      base: cols.base ? `${100 / cols.base} %` : undefined,
+      base: cols.base ? `${100 / cols.base}%` : undefined,
       sm: cols.sm ? `${100 / cols.sm}%` : undefined,
       md: cols.md ? `${100 / cols.md}%` : undefined,
       lg: cols.lg ? `${100 / cols.lg}%` : undefined,
@@ -28,9 +28,9 @@ export default function Calendar({cols, children, title}: CalendarProps){
     }
   }
   return(
-    <>
+    <Flex width="100%" wrap={"wrap"} justify={"center"}>
       {(title) && (
-        <Flex width="100%">
+        <Flex width="100%" justify="Center" mb="6">
           <Heading>{ title }</Heading>
         </Flex>
       )}
@@ -52,6 +52,6 @@ export default function Calendar({cols, children, title}: CalendarProps){
           </Flex>
         ))}
       </Flex>
-    </>
+    </Flex>
   )
 }
