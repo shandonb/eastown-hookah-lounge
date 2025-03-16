@@ -1,6 +1,4 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { Provider } from '@/components/ui/provider';
-import { Theme } from '@chakra-ui/react';
 import type { CalendarItemProps} from '@/components/ui/calendar/calendar-item';
 import CalendarItem from '@/components/ui/calendar/calendar-item';
 
@@ -26,13 +24,9 @@ export default CalendarItemStory;
 const Template: StoryFn<CalendarItemStoryProps> = (args) => {
   const { contents, ...props } = args;
   return(
-  <Provider>
-    <Theme appearance="dark">
-      <CalendarItem {...props}>
-        { contents }
-      </CalendarItem>
-    </Theme>
-  </Provider>
+    <CalendarItem {...props}>
+      { contents }
+    </CalendarItem>
 )}
 
 export const Default = Template.bind({});
