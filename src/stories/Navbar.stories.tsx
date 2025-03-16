@@ -1,5 +1,3 @@
-import { Provider } from "@/components/ui/provider";
-import { Theme } from "@chakra-ui/react";
 import { Navbar } from "@/components/ui/navbar";
 
 const NavbarStory = {
@@ -10,11 +8,7 @@ const NavbarStory = {
 export default NavbarStory;
 
 const Template = () => (
-  <Provider>
-    <Theme appearance="dark">
-      <Navbar />
-    </Theme>
-  </Provider>
+  <Navbar />
 );
 
 export const Default = Template.bind({});
