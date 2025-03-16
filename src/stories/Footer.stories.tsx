@@ -1,5 +1,3 @@
-import { Provider } from "@/components/ui/provider";
-import { Theme } from "@chakra-ui/react";
 import { Footer } from "@/components/footer";
 
 const FooterStory = {
@@ -10,11 +8,7 @@ const FooterStory = {
 export default FooterStory;
 
 const Template = () => (
-  <Provider>
-    <Theme appearance="dark">
-      <Footer />
-    </Theme>
-  </Provider>
+  <Footer />
 );
 
 export const Default = Template.bind({});

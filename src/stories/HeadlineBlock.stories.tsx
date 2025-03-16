@@ -1,13 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
 import HeadlineBlock, { HeadlineBlockProps } from '@/components/HeadlineBlock';
-import { Provider } from '@/components/ui/provider';
-import { Theme } from '@chakra-ui/react';
 
-interface HeadlineStoryProps {
-  theme: "light" | "dark";
-}
-
-type StoryProps = HeadlineBlockProps & HeadlineStoryProps;
 
 const HeadlineBlockStory: Meta<typeof HeadlineBlock> = {
   title: 'Components/HeadlineBlock',
@@ -28,14 +21,9 @@ const HeadlineBlockStory: Meta<typeof HeadlineBlock> = {
 
 export default HeadlineBlockStory;
 
-const Template: StoryFn<StoryProps> = (args) => {
-  const { theme, ...props } = args;
+const Template: StoryFn<HeadlineBlockProps> = (args) => {
   return(
-    <Provider>
-      <Theme appearance={theme}>
-        <HeadlineBlock {...props} />
-      </Theme>
-    </Provider>
+    <HeadlineBlock {...args} />
   )
 }
 
@@ -43,6 +31,5 @@ export const Default = Template.bind({});
 Default.args = {
   heading: 'Heading section',
   copy: 'Body copy',
-  height: '30vh',
-  theme: 'dark'
+  height: '30vh'
 }
