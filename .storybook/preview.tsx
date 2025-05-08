@@ -1,5 +1,5 @@
 import { Theme } from '@chakra-ui/react';
-import { Provider } from '../src/components/ui/provider.tsx'
+import { Provider } from '../src/components/ui/provider.tsx';
 import React from 'react';
 
 import type { Preview } from '@storybook/react'

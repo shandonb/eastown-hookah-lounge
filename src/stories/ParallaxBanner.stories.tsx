@@ -1,8 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 import ContentParallax, { ContentParallaxProps } from "@/components/parallax-banner";
-import { Provider } from "@/components/ui/provider";
 import { ParallaxProvider } from "react-scroll-parallax";
-import { Theme } from "@chakra-ui/react";
 
 const ParallaxBanner: Meta<typeof ContentParallax> = {
   title: "Components/ParallaxBanner",
@@ -15,13 +13,9 @@ const ParallaxBanner: Meta<typeof ContentParallax> = {
 export default ParallaxBanner;
 
 const Template: StoryFn<ContentParallaxProps> = (args: ContentParallaxProps) => (
-  <Provider>
-    <ParallaxProvider>
-      <Theme appearance="dark">
-        <ContentParallax {...args} />
-      </Theme>
-    </ParallaxProvider>
-  </Provider>
+  <ParallaxProvider>
+    <ContentParallax {...args} />
+  </ParallaxProvider>
 )
 
 export const Default = Template.bind({});
